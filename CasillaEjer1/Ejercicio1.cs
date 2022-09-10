@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasillaEjer1
 {
-    internal class Program
+    internal class Ejercicio1
     {
         public class Cuenta
         {
