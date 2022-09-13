@@ -6,3 +6,11 @@ C:\Users\Alumno\source\repos\CasillaEjer1\bin\Debug\CasillaEjer1.exe
 C:\Users\Alumno\source\repos\CasillaEjer1\bin\Debug\CasillaEjer1.pdb
 C:\Users\Alumno\source\repos\CasillaEjer1\obj\Debug\CasillaEjer1.exe
 C:\Users\Alumno\source\repos\CasillaEjer1\obj\Debug\CasillaEjer1.pdb
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\CasillaEjer1\bin\Debug\CasillaEjer1.exe.config
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\CasillaEjer1\bin\Debug\CasillaEjer1.exe
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\CasillaEjer1\bin\Debug\CasillaEjer1.pdb
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\CasillaEjer1\obj\Debug\CasillaEjer1.csproj.AssemblyReference.cache
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\CasillaEjer1\obj\Debug\CasillaEjer1.csproj.SuggestedBindingRedirects.cache
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\CasillaEjer1\obj\Debug\CasillaEjer1.csproj.CoreCompileInputs.cache
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\CasillaEjer1\obj\Debug\CasillaEjer1.exe
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\CasillaEjer1\obj\Debug\CasillaEjer1.pdb

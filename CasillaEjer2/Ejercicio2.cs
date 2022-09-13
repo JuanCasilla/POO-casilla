@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,8 +19,8 @@ namespace CasillaEjer2
             private int edad;
             private string DNI;
             private string sexo;
-            private int peso;
-            private int altura;
+            private double peso;
+            private double altura;
 
             private string sexodef = "H";
             private int infrapeso = -1;
@@ -48,9 +51,34 @@ namespace CasillaEjer2
             {
                 this.nombre = nombre;
                 this.edad = edad;
-                DNI = dni;
+                this.DNI = dni;
                 this.sexo = sexo;
                 this.peso = peso;
+                this.altura = altura;
+            }
+
+            public void setNombre(String nombre)
+            {
+                this.nombre = nombre;
+            }
+
+            public void setEdad(int edad)
+            {
+                this.edad = edad;
+            }
+
+            public void setSexo(string sexo)
+            {
+                this.sexo = sexo;
+            }
+
+            public void setPeso(double peso)
+            {
+                this.peso = peso;
+            }
+
+            public void setAltura(double altura)
+            {
                 this.altura = altura;
             }
 
@@ -74,7 +102,12 @@ namespace CasillaEjer2
 
             public bool esMayorDeEdad(int edad)
             {
-                return false;
+                bool mayor = false;
+                if (edad >= 18)
+                {
+                    mayor = true;
+                }
+                return mayor;
             }
 
             public void comprobarSexo()
@@ -85,13 +118,78 @@ namespace CasillaEjer2
                 }
             }
 
+            public String toString()
+            {
+                String sexo;
+                if (this.sexo == "H")
+                {
+                    sexo = "Hombre";
+                }
+                else
+                {
+                    sexo = "Mujer";
+                }
+                return "Informacion de la persona:\n"
+                        + "Nombre: " + nombre + "\n"
+                        + "Sexo: " + sexo + "\n"
+                        + "Edad: " + edad + " años\n"
+                        + "DNI: " + DNI + "\n"
+                        + "Peso: " + peso + " kg\n"
+                        + "Altura: " + altura + " metros\n";
+            }
+
+            public void generarDNI(){
+                int divisor = 23;
+
+                Random randDNI = new Random();
+                int numDNI = randDNI.Next((100000000 - 10000000) + 10000000);
+                int res = numDNI - (numDNI / divisor * divisor);
+                char resCHAR = (char)res;
+
+                char letraDNI = LetraDNI(resCHAR);
+
+                DNI = numDNI.ToString() + letraDNI;
+            }
+
+            private char LetraDNI(char res)
+            {
+                char[] letras = {'T', 'R', 'W', 'A', 'G', 'M', 'Y',
+            'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z',
+            'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
+                
+                return letras[res];
+            }
+
             static void Main(string[] args)
             {
 
-                Persona p1;
+                Console.Write("Nombre: ");
+                string nombre1 = Console.ReadLine();
+                Console.Write("Edad: ");
+                int edad1 = int.Parse(Console.ReadLine());
+                Console.Write("Sexo: ");
+                string sexo1 = Console.ReadLine();
+                Console.Write("Peso: ");
+                int peso1 = int.Parse(Console.ReadLine());
+                Console.Write("Altura: ");
+                int altura1 = int.Parse(Console.ReadLine());
 
-                p1 = new Persona();
+                Persona persona1, persona2, persona3;
 
+                string dni1 = Persona.generarDNI();
+
+                persona1 = new Persona(nombre1, edad1, persona1.DNI, sexo1, peso1, altura1);
+                persona2 = new Persona(nombre1, edad1, persona2.DNI, sexo1);
+                persona3 = new Persona();
+
+                persona2.setPeso(100);
+                persona2.setAltura(1.92);
+
+                persona3.setNombre("Pedro");
+                persona3.setEdad(20);
+                persona3.setSexo("H");
+                persona3.setPeso(80);
+                persona3.setAltura(1.73);
             }
         }
     }
