@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,17 +40,18 @@ namespace CasillaEjer2
 
                 this.nombre = nombre;
                 this.edad = edad;
+                this.DNI = generarDNI();
                 this.sexo = sexo;
                 peso = 0;
                 altura = 0;
 
             }
 
-            public Persona(string nombre, int edad, string dni, string sexo, int peso, int altura)
+            public Persona(string nombre, int edad, string dni, string sexo, int peso, double altura)
             {
                 this.nombre = nombre;
                 this.edad = edad;
-                this.DNI = dni;
+                this.DNI = generarDNI();
                 this.sexo = sexo;
                 this.peso = peso;
                 this.altura = altura;
@@ -118,9 +118,9 @@ namespace CasillaEjer2
                 }
             }
 
-            public String toString()
+            public string toString()
             {
-                String sexo;
+                string sexo;
                 if (this.sexo == "H")
                 {
                     sexo = "Hombre";
@@ -138,7 +138,8 @@ namespace CasillaEjer2
                         + "Altura: " + altura + " metros\n";
             }
 
-            public void generarDNI(){
+            public string generarDNI()
+            {
                 int divisor = 23;
 
                 Random randDNI = new Random();
@@ -148,7 +149,7 @@ namespace CasillaEjer2
 
                 char letraDNI = LetraDNI(resCHAR);
 
-                DNI = numDNI.ToString() + letraDNI;
+                return DNI = numDNI.ToString() + letraDNI;
             }
 
             private char LetraDNI(char res)
@@ -156,66 +157,65 @@ namespace CasillaEjer2
                 char[] letras = {'T', 'R', 'W', 'A', 'G', 'M', 'Y',
             'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z',
             'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
-                
+
                 return letras[res];
             }
+        }
+        static void Main(string[] args)
+        {
 
-            static void Main(string[] args)
-            {
+            Console.Write("Nombre: ");
+            string nombre1 = Console.ReadLine();
+            Console.Write("Edad: ");
+            int edad1 = int.Parse(Console.ReadLine());
+            Console.Write("Sexo: ");
+            string sexo1 = Console.ReadLine();
+            Console.Write("Peso: ");
+            int peso1 = int.Parse(Console.ReadLine());
+            Console.Write("Altura: ");
+            int altura1 = int.Parse(Console.ReadLine());
 
-                Console.Write("Nombre: ");
-                string nombre1 = Console.ReadLine();
-                Console.Write("Edad: ");
-                int edad1 = int.Parse(Console.ReadLine());
-                Console.Write("Sexo: ");
-                string sexo1 = Console.ReadLine();
-                Console.Write("Peso: ");
-                int peso1 = int.Parse(Console.ReadLine());
-                Console.Write("Altura: ");
-                int altura1 = int.Parse(Console.ReadLine());
+            Persona persona1, persona2, persona3;
 
-                Persona persona1, persona2, persona3;
+            persona1 = new Persona(nombre1, edad1, "", sexo1, peso1, altura1);
+            persona2 = new Persona(nombre1, edad1, "", sexo1, 100, 1.92);
+            persona3 = new Persona();
 
-                string dni1 = Persona.generarDNI();
-                string dni2 = Persona.generarDNI();
-                string dni3 = Persona.generarDNI();
-
-                persona1 = new Persona(nombre1, edad1, dni1, sexo1, peso1, altura1);
-                persona2 = new Persona(nombre1, edad1, dni2, sexo1);
-                persona3 = new Persona();
-
-                persona2.setPeso(100);
-                persona2.setAltura(1.92);
-
-                persona3.setNombre("Pedro");
-                persona3.setEdad(20);
-                persona3.DNI = dni3;
-                persona3.setSexo("H");
-                persona3.setPeso(80);
-                persona3.setAltura(1.73);
+            persona3.setNombre("Pedro");
+            persona3.setEdad(20);
+            persona3.setSexo("H");
+            persona3.setPeso(80);
+            persona3.setAltura(1.73);
 
 
-            }
+        }
 
-            public static void MensajePeso(Persona p){       
+        public static void MensajePeso(Persona p)
+        {
             int IMC = p.calcularIMC();
-                if(IMC == 0){
-                    Console.WriteLine("Esta en peso ideal");
-                } else if(IMC == 1){
-                    Console.WriteLine("Arriba de su peso ideal");
-                }
-                else{
-                    Console.WriteLine("Abajo de su peso ideal");
-                }
+            if (IMC == 0)
+            {
+                Console.WriteLine("Esta en peso ideal");
             }
+            else if (IMC == 1)
+            {
+                Console.WriteLine("Arriba de su peso ideal");
+            }
+            else
+            {
+                Console.WriteLine("Abajo de su peso ideal");
+            }
+        }
 
-            public static void MensajeEdad(Persona p){
-                if (p.esMayorDeEdad()){
-                    Console.WriteLine("Es mayor de edad");
-                }
-                else{
-                    Console.WriteLine("No es mayor de edad");
-                }
+        public static void MensajeEdad(Persona p)
+        {
+            if (p.esMayorDeEdad(1))
+            {
+                Console.WriteLine("Es mayor de edad");
+            }
+            else
+            {
+                Console.WriteLine("No es mayor de edad");
             }
         }
     }
