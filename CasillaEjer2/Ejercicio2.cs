@@ -177,9 +177,11 @@ namespace CasillaEjer2
                 Persona persona1, persona2, persona3;
 
                 string dni1 = Persona.generarDNI();
+                string dni2 = Persona.generarDNI();
+                string dni3 = Persona.generarDNI();
 
-                persona1 = new Persona(nombre1, edad1, persona1.DNI, sexo1, peso1, altura1);
-                persona2 = new Persona(nombre1, edad1, persona2.DNI, sexo1);
+                persona1 = new Persona(nombre1, edad1, dni1, sexo1, peso1, altura1);
+                persona2 = new Persona(nombre1, edad1, dni2, sexo1);
                 persona3 = new Persona();
 
                 persona2.setPeso(100);
@@ -187,9 +189,33 @@ namespace CasillaEjer2
 
                 persona3.setNombre("Pedro");
                 persona3.setEdad(20);
+                persona3.DNI = dni3;
                 persona3.setSexo("H");
                 persona3.setPeso(80);
                 persona3.setAltura(1.73);
+
+
+            }
+
+            public static void MensajePeso(Persona p){       
+            int IMC = p.calcularIMC();
+                if(IMC == 0){
+                    Console.WriteLine("Esta en peso ideal");
+                } else if(IMC == 1){
+                    Console.WriteLine("Arriba de su peso ideal");
+                }
+                else{
+                    Console.WriteLine("Abajo de su peso ideal");
+                }
+            }
+
+            public static void MensajeEdad(Persona p){
+                if (p.esMayorDeEdad()){
+                    Console.WriteLine("Es mayor de edad");
+                }
+                else{
+                    Console.WriteLine("No es mayor de edad");
+                }
             }
         }
     }

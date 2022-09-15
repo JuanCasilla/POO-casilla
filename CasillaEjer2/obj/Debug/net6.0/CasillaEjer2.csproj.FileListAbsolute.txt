@@ -1,0 +1,5 @@
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\CasillaEjer2\obj\Debug\net6.0\CasillaEjer2.csproj.AssemblyReference.cache
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\CasillaEjer2\obj\Debug\net6.0\CasillaEjer2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\CasillaEjer2\obj\Debug\net6.0\CasillaEjer2.AssemblyInfoInputs.cache
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\CasillaEjer2\obj\Debug\net6.0\CasillaEjer2.AssemblyInfo.cs
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\CasillaEjer2\obj\Debug\net6.0\CasillaEjer2.csproj.CoreCompileInputs.cache
