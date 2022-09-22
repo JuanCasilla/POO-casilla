@@ -100,7 +100,7 @@ namespace CasillaEjer2
                 }
             }
 
-            public bool esMayorDeEdad(int edad)
+            public bool esMayorDeEdad()
             {
                 bool mayor = false;
                 if (edad >= 18)
@@ -118,7 +118,7 @@ namespace CasillaEjer2
                 }
             }
 
-            public string toString()
+            public string ImpPersona()
             {
                 string sexo;
                 if (this.sexo == "H")
@@ -173,20 +173,37 @@ namespace CasillaEjer2
             Console.Write("Peso: ");
             int peso1 = int.Parse(Console.ReadLine());
             Console.Write("Altura: ");
-            int altura1 = int.Parse(Console.ReadLine());
+            double altura1 = Double.Parse(Console.ReadLine());
 
             Persona persona1, persona2, persona3;
 
             persona1 = new Persona(nombre1, edad1, "", sexo1, peso1, altura1);
-            persona2 = new Persona(nombre1, edad1, "", sexo1, 100, 1.92);
+            persona2 = new Persona(nombre1, edad1, "", sexo1, 70, 1.92);
             persona3 = new Persona();
 
-            persona3.setNombre("Pedro");
-            persona3.setEdad(20);
-            persona3.setSexo("H");
-            persona3.setPeso(80);
-            persona3.setAltura(1.73);
+            persona3.setNombre("Carla");
+            persona3.setEdad(50);
+            persona3.setSexo("F");
+            persona3.setPeso(59);
+            persona3.setAltura(1.66);
 
+            Console.WriteLine("\n");
+
+            Console.WriteLine(persona1.ImpPersona());
+            MensajePeso(persona1);
+            MensajeEdad(persona1);
+            Console.WriteLine("\n");
+
+            Console.WriteLine(persona2.ImpPersona());
+            MensajePeso(persona2);
+            MensajeEdad(persona2);
+            Console.WriteLine("\n");
+
+            Console.WriteLine(persona3.ImpPersona());
+            MensajePeso(persona3);
+            MensajeEdad(persona3);
+
+            Console.ReadKey();
 
         }
 
@@ -209,7 +226,7 @@ namespace CasillaEjer2
 
         public static void MensajeEdad(Persona p)
         {
-            if (p.esMayorDeEdad(1))
+            if (p.esMayorDeEdad())
             {
                 Console.WriteLine("Es mayor de edad");
             }
