@@ -16,10 +16,10 @@ namespace Casilla456
             private string consumo;
             private int peso;
 
-            private int preciodef = 100;
-            private string colordef = "blanco";
-            private string consumodef = "F";
-            private int pesodef = 5;
+            public int preciodef = 100;
+            public string colordef = "blanco";
+            public string consumodef = "F";
+            public int pesodef = 5;
 
             public string consumoA = "A";
             public string consumoB = "B";
@@ -33,19 +33,16 @@ namespace Casilla456
                 set { precio = value; }
                 get { return precio; }
             }
-
             public string Color
             {
                 set { color = value; }
                 get { return color; } 
             }
-
             public string Consumo
             {
                 set { consumo = value; }
                 get { return consumo; }
             }
-
             public int Peso
             {
                 set { peso = value; }
@@ -90,7 +87,6 @@ namespace Casilla456
 
                     for (int i = 0; i < consumos.Length && !encontrado; i++)
                     {
-
                         if (consumos[i] == (consumo))
                         {
                             encontrado = true;
@@ -113,7 +109,6 @@ namespace Casilla456
 
                     for (int i = 0; i < colores.Length && !encontrado; i++)
                     {
-
                         if (colores[i] == (color))
                         {
                             encontrado = true;
@@ -128,7 +123,7 @@ namespace Casilla456
                 }
             }
 
-            public int precioFinal(int precio)
+            virtual public int precioFinal(int precio)
             {
                 int suma = 0;
                 if(consumo == consumoA)
@@ -183,24 +178,119 @@ namespace Casilla456
             private int carga;
             public int cargadef = 5;
 
-            public Lavadora()
+            public int Carga
             {
-                this.carga = cargadef;
+                set { carga = value; }
             }
 
+            public Lavadora() : base()
+            {
+                this.carga = cargadef;
+                base.Color = colordef;
+                base.Consumo = consumodef;
+                base.Peso = pesodef;
+                base.Precio = preciodef;
+            }
 
             public Lavadora(int precio, int peso) : base(precio, peso)
             {
                 this.Precio = precio;
                 this.Peso = peso;
+                base.Color = colordef;
+                base.Consumo = consumodef;
             }
 
-            public Lavadora() : base()
+            public Lavadora(int precio, string color, string consumo, int peso, int carga) : base (precio, color, consumo, peso)
+            {
+                this.carga = carga;
+                base.Color = color;
+                base.Consumo = consumo;
+                base.Peso = peso;
+                base.Precio = precio;
+            }
 
+            override public int precioFinal (int precio)
+            {
+                int suma = 0;
+                if (base.Peso > 30)
+                {
+                    suma += 50;
+                }
+                return precio + suma;
+            }
+        }
+
+        public class Television : Electrodomestico
+        {
+
+            private int resolucion;
+            private bool sintonizadorTDT;
+            public int resdef = 20;
+            public bool TDTdef = false;
+
+            public bool SintonizadorTDT
+            {
+                set { sintonizadorTDT = value; }
+                get { return sintonizadorTDT; }
+            }
+
+            public Television() : base()
+            {
+                base.Color = colordef;
+                base.Consumo = consumodef;
+                base.Peso = pesodef;
+                base.Precio = preciodef;
+
+            }
+
+            public Television(int precio, int peso) : base(precio, peso)
+            {
+                this.Precio = precio;
+                this.Peso = peso;
+                base.Color = colordef;
+                base.Consumo = consumodef;
+            }
+
+            public Television(int precio, string color, string consumo, int peso, int resolucion, bool sintonizadorTDT) : base(precio, color, consumo, peso)
+            {
+                base.Precio = precio;
+                base.Color = color;
+                base.Consumo = consumo;
+                base.Peso = peso;
+                this.resolucion = resolucion;
+                this.sintonizadorTDT = sintonizadorTDT;
+            }
+
+            override public int precioFinal(int precio)
+            {
+                if(resolucion >= 40)
+                {
+                    precio = precio + ((precio / 100) * 30);
+                }
+                
+                if(sintonizadorTDT)
+                {
+                    precio = precio + 50;
+                }
+                return precio;
+            }
         }
 
         static void Main(string[] args)
         {
+            Object[] electrodomesticos = new Object[10];
+            electrodomesticos[0] = new Lavadora(80, 40);
+            electrodomesticos[1] = new Lavadora(80, 40);
+            electrodomesticos[2] = new Lavadora(80, 40);
+
+            for (int i = 0; i < electrodomesticos.Length; i++)
+            {
+                    Console.WriteLine("a");
+            }    
+
+            
+
+            Console.ReadKey();
         }
 
     }
