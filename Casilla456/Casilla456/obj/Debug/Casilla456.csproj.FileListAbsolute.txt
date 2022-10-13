@@ -1,0 +1,3 @@
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla456\Casilla456\obj\Debug\Casilla456.csproj.AssemblyReference.cache
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla456\Casilla456\obj\Debug\Casilla456.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla456\Casilla456\obj\Debug\Casilla456.csproj.CoreCompileInputs.cache

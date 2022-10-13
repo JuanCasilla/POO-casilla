@@ -194,9 +194,6 @@ namespace Casilla456
                 this.Precio = precio;
                 this.Peso = peso;
             }
-
-            public Lavadora() : base()
-
         }
 
         static void Main(string[] args)
