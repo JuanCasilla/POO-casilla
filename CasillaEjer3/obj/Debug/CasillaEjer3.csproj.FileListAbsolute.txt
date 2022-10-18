@@ -1,3 +1,0 @@
-C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\CasillaEjer3\obj\Debug\CasillaEjer3.csproj.AssemblyReference.cache
-C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\CasillaEjer3\obj\Debug\CasillaEjer3.csproj.SuggestedBindingRedirects.cache
-C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\CasillaEjer3\obj\Debug\CasillaEjer3.csproj.CoreCompileInputs.cache
