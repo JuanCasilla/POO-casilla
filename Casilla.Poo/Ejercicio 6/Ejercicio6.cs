@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_6
 {
-    internal class Ejercicio6{
+    internal class Ejercicio6
+    {
 
         class Libro
         {

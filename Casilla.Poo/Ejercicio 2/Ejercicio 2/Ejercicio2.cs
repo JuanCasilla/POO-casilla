@@ -149,7 +149,7 @@ namespace Ejercicio_2
                         + "Peso: " + peso + " kg\n"
                         + "Altura: " + altura + " metros\n";
             }
-            
+
             public static void MuestraMensajePeso(Persona peso)
             {
                 var IMC = peso.calcularIMC();
