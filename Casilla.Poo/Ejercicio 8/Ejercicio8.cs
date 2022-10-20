@@ -23,7 +23,7 @@ namespace Ejercicio_8
         public Persona()
         {
 
-            int determinar_sexo = MetodosSueltos.generaNumeroAleatorio(0, 1);
+            int determinar_sexo = MetodosSueltos.generaNumeroAleatorio(-1, 1);
 
 
             if (determinar_sexo == CHICO)
@@ -93,7 +93,7 @@ namespace Ejercicio_8
     {
         public static Random random = new Random();
 
-        public static int generaNumeroAleatorio(int minimo - 1, int maximo)
+        public static int generaNumeroAleatorio(int minimo , int maximo)
         {
             int num = random.Next(minimo, maximo);
             return num;
