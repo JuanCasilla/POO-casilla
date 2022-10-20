@@ -48,12 +48,12 @@ namespace Ejercicio_5
 
             public void MostrarInfoJuego()
             {
-                Console.WriteLine("Juego: {0}. Horas estimadas: {1}. Género: {2}. Desarrollador: {3}", titulo, horasEstimadas, genero, compania);
+                Console.WriteLine("Juego: {0}. Horas estimadas: {1}. Género: {2}. Desarrollador: {3}.", titulo, horasEstimadas, genero, compania);
             }
 
             public void MostrarInfoJuegoMasHorasEstimadas()
             {
-                Console.WriteLine("Juego: {0}. Horas estimadas: {1}. Género: {2}. Desarrollador: {3}", titulo, horasEstimadas, genero, compania);
+                Console.WriteLine("Juego: {0}. Horas estimadas: {1}. Género: {2}. Desarrollador: {3}.", titulo, horasEstimadas, genero, compania);
             }
 
             public void entregar()
@@ -124,7 +124,7 @@ namespace Ejercicio_5
 
             public void MostrarInfoSerie()
             {
-                Console.WriteLine("Nombre: {0}. fue creado por {1} tiene {2} temporadas y pertenece al genero {3}", titulo, creador, temporadas, genero);
+                Console.WriteLine("Nombre: {0}. Creador: {1}. Temporadas: {2}. Genero: {3}.", titulo, creador, temporadas, genero);
             }
 
             public void entregar()
@@ -155,26 +155,21 @@ namespace Ejercicio_5
             static void Main(string[] args)
             {
 
-                // Series
-                Serie serie1 = new Serie("Spider-man", "Stan Lee", 1, "Accion");
-                Serie serie2 = new Serie("Iron-man", "Stan Lee", 5, "Accion");
-                Serie serie3 = new Serie("Hawkeye", "Stan Lee", 6, "Accion");
-                Serie serie4 = new Serie("The Boys", "Marvel", 4, "Accion");
-                Serie serie5 = new Serie("Invincible", "Marvel", 2, "Super Heroes");
-                // Videojuegos
-                videosJuego juego1 = new videosJuego("Killzone", 12, "Disparos", "Guerrilla Games");
-                videosJuego juego2 = new videosJuego("Valorant", 17, "Accion", "Riot Games");
-                videosJuego juego3 = new videosJuego("CSGO", 8, "Disparos", "Valve");
-                videosJuego juego4 = new videosJuego("Call of Duty", 13, "Disparos", "Activision");
-                videosJuego juego5 = new videosJuego("DOOM Eternal", 23, "Disparos", "Bethesda");
+                Serie serie1 = new Serie("Daredevil", "Stan Lee", 3, "Acción");
+                Serie serie2 = new Serie("She-Hulk", "Stan Lee", 1, "Acción");
+                Serie serie3 = new Serie("Chainsaw Man", "Tatsuki Fujimoto", 1, "Acción");
+                Serie serie4 = new Serie("Game Of Thrones", "George R. R. Martin", 8, "Acción");
+                Serie serie5 = new Serie("Spy X Family", "Tatsuya Endo", 2, "Acción");
+                videosJuego juego1 = new videosJuego("GTA V", 20, "Disparos", "Rockstar Games");
+                videosJuego juego2 = new videosJuego("League Of Legends", 10, "Accion", "Riot Games");
+                videosJuego juego3 = new videosJuego("Untitled Goose Game", 4, "Aventura", "House House");
+                videosJuego juego4 = new videosJuego("Hades", 18, "Roguelike", "Supergiant Games");
+                videosJuego juego5 = new videosJuego("It Takes Two", 15, "Aventura", "Hazelight Studios");
 
 
                 Serie[] series = { serie1, serie2, serie3, serie4, serie5 };
                 videosJuego[] videojuegos = { juego1, juego2, juego3, juego4, juego5 };
 
-
-
-                // Juegos
                 Console.WriteLine("Videojuegos: ");
                 Console.WriteLine("");
                 juego1.entregar();
@@ -242,11 +237,11 @@ namespace Ejercicio_5
                     }
                 }
 
-                Console.WriteLine("Los juegos entragados son: {0}", juegosEntregado);
-                Console.WriteLine("Los juegos no entregados son: {0}", juegosNoEntregado);
-                Console.WriteLine("Las series entragados son: {0}", serieEntregado);
-                Console.WriteLine("Los series no entregados son: {0}", serieNoEntregado);
-                Console.WriteLine("Los videos juegos con mas horas estimadas son: ");
+                Console.WriteLine("Juegos entragados: {0}", juegosEntregado);
+                Console.WriteLine("Juegos no entragados: {0}", juegosNoEntregado);
+                Console.WriteLine("Series entragadas: {0}", serieEntregado);
+                Console.WriteLine("Series no entregadas: {0}", serieNoEntregado);
+                Console.WriteLine("Los juegos con mas horas estimadas son: ");
 
                 for (int i = 0; i < videojuegos.Length; i++)
                 {
