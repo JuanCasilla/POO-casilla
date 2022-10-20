@@ -48,12 +48,12 @@ namespace Ejercicio_5
 
             public void MostrarInfoJuego()
             {
-                Console.WriteLine("{0} tiene {1} horas estimadas de uso, spertenece al genero {2} y fue desarrollado por {3}", titulo, horasEstimadas, genero, compania);
+                Console.WriteLine("Juego: {0}. Horas estimadas: {1}. Género: {2}. Desarrollador: {3}", titulo, horasEstimadas, genero, compania);
             }
 
             public void MostrarInfoJuegoMasHorasEstimadas()
             {
-                Console.WriteLine("{0} tiene {1} horas estimadas de uso, spertenece al genero {2} y fue desarrollado por {3}", titulo, horasEstimadas, genero, compania);
+                Console.WriteLine("Juego: {0}. Horas estimadas: {1}. Género: {2}. Desarrollador: {3}", titulo, horasEstimadas, genero, compania);
             }
 
             public void entregar()
@@ -86,8 +86,6 @@ namespace Ejercicio_5
         {
             private string titulo;
 
-            //Ejemeplo abreviado de get/set
-            // temporadas {get;set;} // temporadas {get;set;} = algun valor
             private int temporadas = 3;
 
             private bool entregado = false;
@@ -126,7 +124,7 @@ namespace Ejercicio_5
 
             public void MostrarInfoSerie()
             {
-                Console.WriteLine("{0} fue creado por {1} tiene {2} temporadas y pertenece al genero {3}", titulo, creador, temporadas, genero);
+                Console.WriteLine("Nombre: {0}. fue creado por {1} tiene {2} temporadas y pertenece al genero {3}", titulo, creador, temporadas, genero);
             }
 
             public void entregar()

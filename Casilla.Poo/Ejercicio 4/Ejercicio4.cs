@@ -201,13 +201,12 @@ namespace Ejercicio_4
             Electrodomestico electro1 = new Electrodomestico(1500, 20, 'A', "Negro");
             electro1 = new Television(50, false);
 
-
             Electrodomestico electro2 = new Electrodomestico(2000, 30, 'C', "Rojo");
 
             Electrodomestico electro3 = new Electrodomestico(750, 15, 'D', "Blanco");
             electro3 = new Television(32, true);
 
-            Electrodomestico electro4 = new Electrodomestico(15000, 50, 'C', "Azul");
+            Electrodomestico electro4 = new Electrodomestico(15000, 50, 'B', "Azul");
             electro4 = new Lavadora(15000, 50);
 
             Electrodomestico electro5 = new Electrodomestico(1250, 10, 'B', "Naranja");
@@ -248,8 +247,6 @@ namespace Ejercicio_4
             }
 
             double sumaElectrodomesticos = 0;
-
-            //Mostrar Televistores
 
             for (int i = 0; i < electrodomesticos.Length; i++)
             {
