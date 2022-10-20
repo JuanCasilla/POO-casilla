@@ -10,7 +10,7 @@ namespace Ejercicio_8
     public abstract class Persona
     {
 
-        private String nombre;
+        private string nombre;
         private char sexo;
         private int edad;
         private bool asistencia;
@@ -25,12 +25,13 @@ namespace Ejercicio_8
 
             int determinar_sexo = MetodosSueltos.generaNumeroAleatorio(0, 1);
 
+
             if (determinar_sexo == CHICO)
             {
                 nombre = NOMBRES_CHICOS[MetodosSueltos.generaNumeroAleatorio(0, 4)];
                 sexo = 'H';
             }
-            else
+            else if (determinar_sexo == CHICA)
             {
                 nombre = NOMBRES_CHICAS[MetodosSueltos.generaNumeroAleatorio(0, 4)];
                 sexo = 'M';
@@ -84,19 +85,20 @@ namespace Ejercicio_8
     public class Constantes
     {
 
-        public static string[] Materias={"Matematicas", "Filosofia", "Fisica"};
-     
+        public static string[] Materias = { "Matematicas", "Filosofia", "Fisica" };
+
     }
 
     public class MetodosSueltos
     {
         public static Random random = new Random();
 
-        public static int generaNumeroAleatorio(int minimo, int maximo)
+        public static int generaNumeroAleatorio(int minimo - 1, int maximo)
         {
-            int num = random.Next(random.Next() * (minimo - (maximo + 1)) + (maximo + 1));
+            int num = random.Next(minimo, maximo);
             return num;
         }
+
     }
 
     public class Alumno : Persona
@@ -122,150 +124,164 @@ namespace Ejercicio_8
         }
 
         public override void disponibilidad()
-        { }
-
-    }
-
-    public class Profesor : Persona
-    {
-
-    private String materia;
-    public Profesor() : base()
-    {
-
-        base.setEdad(MetodosSueltos.generaNumeroAleatorio(25, 50));
-
-        materia = Constantes.Materias[MetodosSueltos.generaNumeroAleatorio(0, 2)];
-    }
-
-    public String getMateria()
-    {
-        return materia;
-    }
-    public void setMateria(String materia)
-    {
-        this.materia = materia;
-    }
-
-    public override void disponibilidad()
-    {
-
-        int prob = MetodosSueltos.generaNumeroAleatorio(0, 100);
-
-        if (prob < 20)
         {
-            base.setAsistencia(false);
-        }
-        else
-        {
-            base.setAsistencia(true);
-        }
 
-    }
+            int prob = MetodosSueltos.generaNumeroAleatorio(0, 100);
 
-}
-    public class Aula {
-        private int id;
-        private Profesor profesor;
-        private Alumno[] alumnos;
-        private String materia;
-
-        private int MAX_ALUMNOS = 20;
-
-        public Aula()
-        {
-            id = 1;
-
-            profesor = new Profesor();
-            alumnos = new Alumno[MAX_ALUMNOS];
-            creaAlumnos();
-            materia = Constantes.Materias[MetodosSueltos.generaNumeroAleatorio(0, 2)];
-        }
-
-        private void creaAlumnos()
-        {
-            for (int i = 0; i < alumnos.Length; i++)
+            if (prob < 50)
             {
-                alumnos[i] = new Alumno();
+                base.setAsistencia(false);
             }
+            else
+            {
+                base.setAsistencia(true);
+            }
+
         }
 
-        private bool asistenciaAlumnos()
+        public class Profesor : Persona
         {
-            int cuentaAsistencias = 0;
 
-            for (int i = 0; i < alumnos.Length; i++)
+            private string materia;
+            public Profesor() : base()
             {
-                if (alumnos[i].isAsistencia())
+
+                base.setEdad(MetodosSueltos.generaNumeroAleatorio(25, 50));
+
+                materia = Constantes.Materias[MetodosSueltos.generaNumeroAleatorio(0, 2)];
+            }
+
+            public string getMateria()
+            {
+                return materia;
+            }
+            public void setMateria(string materia)
+            {
+                this.materia = materia;
+            }
+
+            public override void disponibilidad()
+            {
+
+                int prob = MetodosSueltos.generaNumeroAleatorio(0, 100);
+
+                if (prob < 20)
                 {
-                    cuentaAsistencias++;
+                    base.setAsistencia(false);
+                }
+                else
+                {
+                    base.setAsistencia(true);
+                }
+
+            }
+
+        }
+        public class Aula
+        {
+            private int id;
+            private Profesor profesor;
+            private Alumno[] alumnos;
+            private string materia;
+
+            private int MAX_ALUMNOS = 20;
+
+            public Aula()
+            {
+                id = 1;
+
+                profesor = new Profesor();
+                alumnos = new Alumno[MAX_ALUMNOS];
+                creaAlumnos();
+                materia = Constantes.Materias[MetodosSueltos.generaNumeroAleatorio(0, 2)];
+            }
+
+            private void creaAlumnos()
+            {
+                for (int i = 0; i < alumnos.Length; i++)
+                {
+                    alumnos[i] = new Alumno();
                 }
             }
 
-            Console.WriteLine("Hay " + cuentaAsistencias + " alumnos");
-
-            return cuentaAsistencias >= ((int)(alumnos.Length / 2));
-        }
-
-        public bool darClase()
-        {
-            if (!profesor.isAsistencia())
+            private bool asistenciaAlumnos()
             {
-                Console.WriteLine("El profesor no esta, no se puede dar clase");
-                return false;
-            }
-            else if (!profesor.getMateria().Equals(materia))
-            {
-                Console.WriteLine("La materia del profesor y del aula no es la misma, no se puede dar clase");
-                return false;
-            }
-            else if (!asistenciaAlumnos())
-            {
-                Console.WriteLine("La asistencia no es suficiente, no se puede dar clase");
-                return false;
-            }
+                int cuentaAsistencias = 0;
 
-            Console.WriteLine("Se puede dar clase");
-            return true;
-        }
-
-        public void notas()
-        {
-            int chicosApro = 0;
-            int chicasApro = 0;
-
-            for (int i = 0; i < alumnos.Length; i++)
-            {
-                if (alumnos[i].getNota() >= 5)
+                for (int i = 0; i < alumnos.Length; i++)
                 {
-                    if (alumnos[i].getSexo() == 'H')
+                    if (alumnos[i].isAsistencia())
                     {
-                        chicosApro++;
-                    }
-                    else
-                    {
-                        chicasApro++;
+                        cuentaAsistencias++;
                     }
                 }
+
+                Console.WriteLine("Hay " + cuentaAsistencias + " alumnos");
+
+                return cuentaAsistencias >= ((int)(alumnos.Length / 2));
             }
-            Console.WriteLine("Hay " + chicosApro + " chicos y " + chicasApro + " chicas aprobados/as");
-            Console.ReadKey();
-        }
-    }
 
-    class Ejercicio8
-    {
-        static void Main(string[] args)
-        {
-
-            Aula aula = new Aula();
-
-            if (aula.darClase())
+            public bool darClase()
             {
-                aula.notas();
+                if (!profesor.isAsistencia())
+                {
+                    Console.WriteLine("El profesor no esta, no se puede dar clase");
+                    return false;
+                }
+                else if (!profesor.getMateria().Equals(materia))
+                {
+                    Console.WriteLine("La materia del profesor y del aula no es la misma, no se puede dar clase");
+                    return false;
+                }
+                else if (!asistenciaAlumnos())
+                {
+                    Console.WriteLine("La asistencia no es suficiente, no se puede dar clase");
+                    return false;
+                }
 
+                Console.WriteLine("Se puede dar clase");
+                return true;
+            }
+
+            public void notas()
+            {
+                int chicosApro = 0;
+                int chicasApro = 0;
+
+                for (int i = 0; i < alumnos.Length; i++)
+                {
+                    if (alumnos[i].getNota() >= 5)
+                    {
+                        if (alumnos[i].getSexo() == 'H')
+                        {
+                            chicosApro++;
+                        }
+                        else
+                        {
+                            chicasApro++;
+                        }
+                    }
+                }
+                Console.WriteLine("Hay " + chicosApro + " chicos y " + chicasApro + " chicas aprobados/as");
+                Console.ReadKey();
+            }
+        }
+
+        class Ejercicio8
+        {
+            static void Main(string[] args)
+            {
+
+                Aula aula = new Aula();
+
+                if (aula.darClase())
+                {
+                    aula.notas();
+
+                }
+
+                Console.ReadKey();
             }
         }
     }
 }
-

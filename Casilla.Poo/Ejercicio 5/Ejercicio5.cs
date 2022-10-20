@@ -237,9 +237,9 @@ namespace Ejercicio_5
                     }
                 }
 
-                Console.WriteLine("Juegos entragados: {0}", juegosEntregado);
-                Console.WriteLine("Juegos no entragados: {0}", juegosNoEntregado);
-                Console.WriteLine("Series entragadas: {0}", serieEntregado);
+                Console.WriteLine("Juegos entregados: {0}", juegosEntregado);
+                Console.WriteLine("Juegos no entregados: {0}", juegosNoEntregado);
+                Console.WriteLine("Series entregadas: {0}", serieEntregado);
                 Console.WriteLine("Series no entregadas: {0}", serieNoEntregado);
                 Console.WriteLine("Los juegos con mas horas estimadas son: ");
 
