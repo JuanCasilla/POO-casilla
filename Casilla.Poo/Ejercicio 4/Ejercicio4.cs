@@ -8,12 +8,10 @@ namespace Ejercicio_4
 {
     public class Electrodomestico
     {
-
         public string colorDefault { get; set; } = "blanco";
         public char consumoDeafault { get; set; } = 'F';
         public double precioDeafault { get; set; } = 100;
         public double pesoDefault { get; set; } = 5;
-
 
         public double precioBase;
         public string color;
@@ -45,7 +43,6 @@ namespace Ejercicio_4
 
         public void comprobarConsumoEnergetico(char consumoEnergetico)
         {
-
             if (consumoEnergetico >= 65 && consumoEnergetico <= 70)
             {
                 this.consumoEnergetico = consumoEnergetico;
@@ -116,24 +113,20 @@ namespace Ejercicio_4
 
         public class Lavadora : Electrodomestico
         {
-            const int carga = 5;
+            public int carga = 5;
 
             public Lavadora()
             {
-
             }
 
-            public Lavadora(double precio, int peso)
+            public Lavadora(double precio, int peso, int carga, char consumodef, string colordef) : base()
             {
                 precioBase = precio;
                 this.peso = peso;
+                this.carga = carga;
+                consumoDeafault = consumodef;
+                colorDefault = colordef;
             }
-
-            public Lavadora(int carga) : base()
-            {
-                peso = carga;
-            }
-
 
             public int getCarga()
             {
@@ -171,6 +164,12 @@ namespace Ejercicio_4
                 this.sintonizadorTDT = sintonizadorTDT;
             }
 
+            public Television(double resolucion, bool sintonizadorTDT, double precioBase, double peso, char consumodef, string colordef) : base(precioBase, peso, consumodef, colordef)
+            {
+                this.resolucion = resolucion;
+                this.sintonizadorTDT = sintonizadorTDT;
+            }
+
             public double getResolucion()
             {
                 return resolucion;
@@ -197,59 +196,27 @@ namespace Ejercicio_4
 
         static void Main(string[] args)
         {
-            Electrodomestico[] electrodomesticos = new Electrodomestico[11];
-            Electrodomestico electro1 = new Electrodomestico(1500, 20, 'A', "Negro");
-            electro1 = new Television(50, false);
-
-
-            Electrodomestico electro2 = new Electrodomestico(2000, 30, 'C', "Rojo");
-
-            Electrodomestico electro3 = new Electrodomestico(750, 15, 'D', "Blanco");
-            electro3 = new Television(32, true);
-
-            Electrodomestico electro4 = new Electrodomestico(15000, 50, 'C', "Azul");
-            electro4 = new Lavadora(15000, 50);
-
-            Electrodomestico electro5 = new Electrodomestico(1250, 10, 'B', "Naranja");
-            electro5 = new Television(36, false);
-
-            Electrodomestico electro6 = new Electrodomestico(5780, 5, 'F', "Verde");
-            electro6 = new Lavadora(5780, 5);
-
-            Electrodomestico electro7 = new Electrodomestico(574.50, 90, 'E', "Violeta");
-            electro7 = new Television(50, true);
-
-            Electrodomestico electro8 = new Electrodomestico(1450.50, 45, 'C', "Fucsia");
-            electro8 = new Lavadora(1450.50, 45);
-
-            Electrodomestico electro9 = new Electrodomestico(8500, 68, 'D', "Rosa");
-            electro9 = new Television(37, false);
-
-            Electrodomestico electro10 = new Electrodomestico(9999, 85, 'A', "Amarillo");
-            electro10 = new Lavadora(9999, 85);
-
-            Electrodomestico electro11 = new Television(5676.27, 56);
-            electrodomesticos[0] = electro1;
-            electrodomesticos[1] = electro2;
-            electrodomesticos[2] = electro3;
-            electrodomesticos[3] = electro4;
-            electrodomesticos[4] = electro5;
-            electrodomesticos[5] = electro6;
-            electrodomesticos[6] = electro7;
-            electrodomesticos[7] = electro8;
-            electrodomesticos[8] = electro9;
-            electrodomesticos[9] = electro10;
-            electrodomesticos[10] = electro11;
-
-
-            for (int i = 0; i < electrodomesticos.Length; i++)
-            {
-                electrodomesticos[i].precioBase = electrodomesticos[i].precioFinal();
-            }
-
             double sumaElectrodomesticos = 0;
+            double sumaLavadora = 0;
+            double sumaTelevision = 0;
 
-            //Mostrar Televistores
+            Electrodomestico electro1, electro2, electro3, electro4, electro5, electro6, electro7, electro8, electro9, electro10;
+
+            electro1 = new Television(27, true, 2400, 16, 'A', "Negro");
+            electro2 = new Television(48, false, 7500, 30, 'C', "Gris");
+            electro3 = new Television(32, false, 4000, 20, 'D', "Negro");
+            electro4 = new Television(24, true, 2000, 14, 'C', "Negro");
+            electro5 = new Television(80, true, 15000, 30, 'A', "Gris");
+
+            electro6 = new Lavadora(9000, 50, 23, 'F', "Rojo");
+            electro7 = new Lavadora(2400.50, 30, 50, 'D', "Verde");
+            electro8 = new Lavadora(2500, 60, 30, 'F', "Azul");
+            electro9 = new Lavadora(2600.700, 50, 40, 'C', "Blanco");
+            electro10 = new Lavadora(1234, 50, 45, 'A', "Azul");
+
+            Electrodomestico[] electrodomesticos = { electro1, electro2, electro3, electro4, electro5, electro6, electro7, electro8, electro9, electro10 };
+
+            Console.WriteLine("Precio Televisiones: ");
 
             for (int i = 0; i < electrodomesticos.Length; i++)
             {
@@ -258,34 +225,34 @@ namespace Ejercicio_4
                     var aux = (Television)electrodomesticos[i];
                     aux.PrecioFinal();
                     electrodomesticos[i].precioFinal();
-                    sumaElectrodomesticos += electrodomesticos[i].precioBase;
+                    sumaTelevision += electrodomesticos[i].precioBase;
                     Console.WriteLine(electrodomesticos[i].precioBase);
+                    sumaElectrodomesticos += electrodomesticos[i].precioBase;
                 }
             }
 
-            Console.WriteLine("Lavadoras");
+            Console.WriteLine("");
+            Console.WriteLine("Televisiones precio total: " + sumaTelevision);
+
+            Console.WriteLine("");
+            Console.WriteLine("Precio Lavadoras: ");
 
             for (int i = 0; i < electrodomesticos.Length; i++)
             {
                 if (electrodomesticos[i].GetType() == typeof(Lavadora))
                 {
                     Console.WriteLine(electrodomesticos[i].precioBase);
+                    sumaLavadora += electrodomesticos[i].precioBase;
                     sumaElectrodomesticos += electrodomesticos[i].precioBase;
                 }
             }
 
-            for (int i = 0; i < electrodomesticos.Length; i++)
-            {
-                if (electrodomesticos[i].GetType() == typeof(Electrodomestico))
-                {
-                    Console.WriteLine(electrodomesticos[i].precioBase);
-                    sumaElectrodomesticos += electrodomesticos[i].precioBase;
-                }
-            }
+            Console.WriteLine("");
+            Console.WriteLine("Lavadoras precio total: " + sumaLavadora);
+            Console.WriteLine("");
+            Console.WriteLine("Total de electrodomesticos: " + sumaElectrodomesticos);
 
             Console.ReadLine();
         }
     }
 }
-
-
