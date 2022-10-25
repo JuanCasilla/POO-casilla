@@ -249,7 +249,7 @@ namespace Ejercicio_9
             }
             public int getFilas()
             {
-                return asientos.Length;
+                return asientos.GetLength(1);
             }
             public int getColumnas()
             {
@@ -280,7 +280,7 @@ namespace Ejercicio_9
             public static Random random = new Random();
             public static int generaNumeroEnteroAleatorio(int minimo, int maximo)
             {
-                int num = (int)(random.Next() * (minimo - (maximo)) + (maximo));
+                int num = random.Next(minimo , maximo);
                 return num;
             }
 

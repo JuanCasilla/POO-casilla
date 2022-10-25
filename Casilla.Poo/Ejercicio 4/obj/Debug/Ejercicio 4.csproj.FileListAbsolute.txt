@@ -6,6 +6,7 @@ C:\Users\juanm\source\repos\Casilla.Poo\Ejercicio 4\obj\Debug\Ejercicio 4.csproj
 C:\Users\juanm\source\repos\Casilla.Poo\Ejercicio 4\obj\Debug\Ejercicio 4.csproj.CoreCompileInputs.cache
 C:\Users\juanm\source\repos\Casilla.Poo\Ejercicio 4\obj\Debug\Ejercicio 4.exe
 C:\Users\juanm\source\repos\Casilla.Poo\Ejercicio 4\obj\Debug\Ejercicio 4.pdb
+<<<<<<< HEAD
 C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 4\bin\Debug\Ejercicio 4.exe.config
 C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 4\bin\Debug\Ejercicio 4.exe
 C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 4\bin\Debug\Ejercicio 4.pdb
@@ -14,3 +15,13 @@ C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ej
 C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 4\obj\Debug\Ejercicio 4.csproj.CoreCompileInputs.cache
 C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 4\obj\Debug\Ejercicio 4.exe
 C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 4\obj\Debug\Ejercicio 4.pdb
+=======
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 4\bin\Debug\Ejercicio 4.exe.config
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 4\bin\Debug\Ejercicio 4.exe
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 4\bin\Debug\Ejercicio 4.pdb
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 4\obj\Debug\Ejercicio 4.csproj.AssemblyReference.cache
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 4\obj\Debug\Ejercicio 4.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 4\obj\Debug\Ejercicio 4.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 4\obj\Debug\Ejercicio 4.exe
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 4\obj\Debug\Ejercicio 4.pdb
+>>>>>>> d57cb9ab7bda8c372d3fb6edd5420b3142cd650c

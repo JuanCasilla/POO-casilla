@@ -6,3 +6,11 @@ C:\Users\juanm\source\repos\Casilla.Poo\Ejercicio 8\obj\Debug\Ejercicio 8.csproj
 C:\Users\juanm\source\repos\Casilla.Poo\Ejercicio 8\obj\Debug\Ejercicio 8.csproj.CoreCompileInputs.cache
 C:\Users\juanm\source\repos\Casilla.Poo\Ejercicio 8\obj\Debug\Ejercicio 8.exe
 C:\Users\juanm\source\repos\Casilla.Poo\Ejercicio 8\obj\Debug\Ejercicio 8.pdb
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 8\bin\Debug\Ejercicio 8.exe.config
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 8\bin\Debug\Ejercicio 8.exe
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 8\bin\Debug\Ejercicio 8.pdb
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 8\obj\Debug\Ejercicio 8.csproj.AssemblyReference.cache
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 8\obj\Debug\Ejercicio 8.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 8\obj\Debug\Ejercicio 8.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 8\obj\Debug\Ejercicio 8.exe
+C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Ejercicio 8\obj\Debug\Ejercicio 8.pdb
