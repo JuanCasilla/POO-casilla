@@ -215,15 +215,19 @@ namespace Ejercicio_9
 
             public bool haySitio()
             {
+
+                int contador = 0;
+
                 for (int i = 0; i < asientos.GetLength(0); i++)
                 {
                     for (int j = 0; j < asientos.GetLength(1); j++)
                     {
-                        if (!asientos[i,j].ocupado())
+                        if (!asientos[i,0+contador].ocupado())
                         {
                             return true;
                         }
                     }
+                    contador++;
                 }
                 return false;
             }
@@ -245,7 +249,7 @@ namespace Ejercicio_9
 
             public Asiento getAsiento(int fila, char letra)
             {
-                return asientos[asientos.Length - fila - 1 , letra - 'A'];
+                return asientos[asientos.GetLength(0) - fila - 1 , letra - 'A'];
             }
             public int getFilas()
             {
@@ -262,13 +266,17 @@ namespace Ejercicio_9
                 Console.WriteLine("Pelicula reproducida: " + pelicula);
                 Console.WriteLine("Precio entrada: " + precio);
                 Console.WriteLine("");
+
+                int contador = 0;
+
                 for (int i = 0; i < asientos.Length; i++)
                 {
                     for (int j = 0; j < asientos.GetLength(0); j++)
                     {
-                        Console.WriteLine(asientos[i,j]);
+                        Console.WriteLine(asientos[i,0+contador]);
                     }
                     Console.WriteLine("");
+                    contador++;
                 }
             }
         }
@@ -292,6 +300,7 @@ namespace Ejercicio_9
             Pelicula pelicula = new Pelicula("Avengers: Endgame", 200, 13, "Kevin Feige");
 
             Console.WriteLine("Introduce el numero de filas");
+            
             int filas = Int32.Parse(Console.ReadLine());
 
             Console.WriteLine("Introduce el numero de columnas");
@@ -310,14 +319,14 @@ namespace Ejercicio_9
             char letra;
 
             Console.WriteLine("Espectadores generados: ");
-            for (int i = 0; i < numEspectadores || cine.haySitio(); i++) {
+            for (int i = 0; i < numEspectadores && cine.haySitio(); i++) {
 
                 e = new Espectador(
                         Metodos.nombres[Metodos.generaNumeroEnteroAleatorio(0, Metodos.nombres.Length - 1)],
                         Metodos.generaNumeroEnteroAleatorio(10, 30),
                         Metodos.generaNumeroEnteroAleatorio(1, 10));
 
-                Console.WriteLine(e);
+                Console.WriteLine(e.getNombre());
                 do
                 {
                     fila = Metodos.generaNumeroEnteroAleatorio(0, cine.getFilas() - 1);
