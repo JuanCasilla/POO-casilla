@@ -13,7 +13,6 @@ namespace Ejercicio04
         public char consumoDeafault { get; set; } = 'F';
         public double precioDeafault { get; set; } = 100;
 
-
         public double pesoDefault { get; set; } = 5;
         public double precioBase;
         public string color;
