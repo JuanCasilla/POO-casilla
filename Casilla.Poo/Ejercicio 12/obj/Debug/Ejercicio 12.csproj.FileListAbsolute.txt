@@ -1,0 +1,8 @@
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 12\bin\Debug\Ejercicio 12.exe.config
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 12\bin\Debug\Ejercicio 12.exe
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 12\bin\Debug\Ejercicio 12.pdb
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 12\obj\Debug\Ejercicio 12.csproj.AssemblyReference.cache
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 12\obj\Debug\Ejercicio 12.csproj.SuggestedBindingRedirects.cache
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 12\obj\Debug\Ejercicio 12.csproj.CoreCompileInputs.cache
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 12\obj\Debug\Ejercicio 12.exe
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Ejercicio 12\obj\Debug\Ejercicio 12.pdb
