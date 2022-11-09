@@ -14,3 +14,11 @@ C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Casilla.Poo\obj\Debu
 C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Casilla.Poo\obj\Debug\Ejercicio 1.csproj.CoreCompileInputs.cache
 C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Casilla.Poo\obj\Debug\Casilla.Poo.exe
 C:\Users\Alumno\Desktop\RepoCasilla\POO-casilla\Casilla.Poo\Casilla.Poo\obj\Debug\Casilla.Poo.pdb
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Casilla.Poo\bin\Debug\Casilla.Poo.exe.config
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Casilla.Poo\bin\Debug\Casilla.Poo.exe
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Casilla.Poo\bin\Debug\Casilla.Poo.pdb
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Casilla.Poo\obj\Debug\Ejercicio 1.csproj.AssemblyReference.cache
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Casilla.Poo\obj\Debug\Ejercicio 1.csproj.SuggestedBindingRedirects.cache
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Casilla.Poo\obj\Debug\Ejercicio 1.csproj.CoreCompileInputs.cache
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Casilla.Poo\obj\Debug\Casilla.Poo.exe
+C:\Users\juanm\OneDrive\Escritorio\Cosas\Repositorios\POO-casilla\Casilla.Poo\Casilla.Poo\obj\Debug\Casilla.Poo.pdb

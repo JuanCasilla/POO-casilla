@@ -9,341 +9,163 @@ namespace Ejercicio_9
 {
     internal class Ejercicio9
     {
-
-        public class Espectador
+        class Pelicula
         {
-            private string nombre;
-            private int edad;
-            private double dinero;
+            string titulo = "";
+            int duracion = 0;
+            int edad = 0;
+            string director = "";
 
-            public Espectador(string nombre, int edad, double dinero)
-            {
-                this.nombre = nombre;
-                this.edad = edad;
-                this.dinero = dinero;
-            }
+            public string Titulo { get { return titulo; } set { titulo = value; } }
+            public int Duracion { get { return duracion; } set { duracion = value; } }
+            public int Edad { get { return edad; } set { edad = value; } }
+            public string Director { get { return director; } set { director = value; } }
 
-            public string getNombre()
+            public Pelicula(int edad)
             {
-                return nombre;
+                Edad = edad;
             }
+        }
+        class Espectador
+        {
+            string nombre = "";
+            int edad = 0;
+            int dinero = 0;
 
-            public void setNombre(string nombre)
-            {
-                this.nombre = nombre;
-            }
-            public int getEdad()
-            {
-                return edad;
-            }
-            public void setEdad(int edad)
-            {
-                this.edad = edad;
-            }
-            public double getDinero()
-            {
-                return dinero;
-            }
-            public void setDinero(double dinero)
-            {
-                this.dinero = dinero;
-            }
+            public string Nombre { get { return nombre; } set { nombre = value; } }
+            public int Edad { get { return edad; } set { edad = value; } }
+            public int Dinero { get { return dinero; } set { dinero = value; } }
 
-            public void pagar(double precio)
+            public Espectador(string nombre, int edad, int dinero)
             {
-                dinero -= precio;
-            }
-
-            public bool tieneEdad(int edadMinima)
-            {
-                return edad >= edadMinima;
-            }
-
-            public bool tieneDinero(double precioEntrada)
-            {
-                return dinero >= precioEntrada;
+                Edad = edad;
+                Dinero = dinero;
+                Nombre = nombre;
             }
         }
 
-        public class Asiento
+        class Cine
         {
-            private char letra;
-            private int fila;
-            private Espectador espectador;
+            int precio = 0;
+            Pelicula peli = null;
 
-            public Asiento(char letra, int fila)
-            {
-                this.letra = letra;
-                this.fila = fila;
-                espectador = null;
-            }
+            public int Precio { get { return precio; } set { precio = value; } }
+            public Pelicula Peli { get { return peli; } set { peli = value; } }
 
-            public char getLetra()
+            public Cine(int precio, Pelicula peli)
             {
-                return letra;
-            }
-            public void setLetra(char letra)
-            {
-                this.letra = letra;
-            }
-            public int getFila()
-            {
-                return fila;
-            }
-            public void setFila(int fila)
-            {
-                this.fila = fila;
-            }
-
-            public Espectador getEspectador()
-            {
-                return espectador;
-            }
-
-            public void setEspectador(Espectador espectador)
-            {
-                this.espectador = espectador;
-            }
-
-            public bool ocupado()
-            {
-                return espectador != null;
+                Precio = precio;
+                Peli = peli;
             }
         }
 
-        public class Pelicula
+        class Sala
         {
-
-            private string titulo;
-            private int duracion;
-            private int edadMinima;
-            private string director;
-
-            public Pelicula(string titulo, int duracion, int edadMinima, string director)
+            int columna = 0;
+            int fila = 0;
+            char[] letra = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K' };
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            public List<string> Asiento = new List<string>();
+            public List<string> AsientoOcupados = new List<string>();
+            static Random rnd = new Random();
+            public int Columna { get { return columna; } set { columna = value; } }
+            public int Fila { get { return fila; } set { fila = value; } }
+            public Sala(int columna, int fila)
             {
-                this.titulo = titulo;
-                this.duracion = duracion;
-                this.edadMinima = edadMinima;
-                this.director = director;
-            }
-
-            public string getTitulo()
-            {
-                return titulo;
-            }
-            public void setTitulo(string titulo)
-            {
-                this.titulo = titulo;
-            }
-            public int getDuracion()
-            {
-                return duracion;
-            }
-            public void setDuracion(int duracion)
-            {
-                this.duracion = duracion;
-            }
-            public int getEdadMinima()
-            {
-                return edadMinima;
-            }
-            public void setEdadMinima(int edadMinima)
-            {
-                this.edadMinima = edadMinima;
-            }
-            public string getDirector()
-            {
-                return director;
-            }
-            public void setDirector(string director)
-            {
-                this.director = director;
-            }
-        }
-
-        public class Cine
-        {
-            private Asiento[,] asientos;
-            private double precio;
-            private Pelicula pelicula;
-
-            public Cine(int filas, int columnas, double precio, Pelicula pelicula)
-            {
-                asientos = new Asiento[filas,columnas];
-                this.precio = precio;
-                this.pelicula = pelicula;
-                rellenaButacas();
-            }
-
-            public Asiento[,] getAsientos()
-            {
-                return asientos;
-            }
-            public void setAsientos(Asiento[,] asientos)
-            {
-                this.asientos = asientos;
-            }
-            public double getPrecio()
-            {
-                return precio;
-            }
-            public void setPrecio(double precio)
-            {
-                this.precio = precio;
-            }
-            public Pelicula getPelicula()
-            {
-                return pelicula;
-            }
-            public void setPelicula(Pelicula pelicula)
-            {
-                this.pelicula = pelicula;
-            }
-
-            private void rellenaButacas()
-            {
-                int fila = asientos.Length;
-                for (int i = 0; i < asientos.GetLength(0); i++)
+                Columna = columna;
+                Fila = fila;
+                int cont = 0;
+                for (int a = 0; a < fila; a++)
                 {
-                    for (int j = 0; j < asientos.GetLength(1); j++)
+                    cont++;
+                    for (int b = 0; b < columna; b++)
                     {
-                        asientos[i,j] = new Asiento((char)('A' + j), fila);
+                        Asiento.Add($"{array[fila - cont]}{letra[b]}");
                     }
-                    fila--;
                 }
             }
-
-            public bool haySitio()
+            public void simulacion()
             {
-
-                int contador = 0;
-
-                for (int i = 0; i < asientos.GetLength(0); i++)
+                int cont = 0;
+                for (int a = 0; a < fila; a++)
                 {
-                    for (int j = 0; j < asientos.GetLength(1); j++)
+                    for (int b = 0; b < columna; b++)
                     {
-                        if (!asientos[i,0+contador].ocupado())
+                        Console.Write(Asiento[cont] + "   ");
+                        cont++;
+                    }
+                    Console.WriteLine("\n");
+                }
+            }
+            public void ocuparRandom(Espectador espectador)
+            {
+                int probabilidad = rnd.Next(columna * fila);
+                if (Asiento[probabilidad] != "ocupado")
+                {
+                    AsientoOcupados.Add($"{Asiento[probabilidad]} ocupado por: {espectador.Nombre}");
+                    Asiento.Insert(probabilidad, $"ocupado");
+                    Asiento.RemoveAt(probabilidad + 1);
+                }
+                else
+                {
+                    int cont = 0;
+                    foreach (string item in Asiento)
+                    {
+                        if (Asiento[cont] != "ocupado")
                         {
-                            return true;
+                            AsientoOcupados.Add($"{Asiento[cont]} ocupado por: {espectador.Nombre}");
+                            Asiento.Insert(cont, $"ocupado");
+                            Asiento.RemoveAt(cont + 1);
+                            break;
                         }
+                        cont++;
                     }
-                    contador++;
-                }
-                return false;
-            }
-
-            public bool haySitioButaca(int fila, char letra)
-            {
-                return getAsiento(fila, letra).ocupado();
-            }
-
-            public bool sePuedeSentar(Espectador e)
-            {
-                return e.tieneDinero(precio) && e.tieneEdad(pelicula.getEdadMinima());
-            }
-
-            public void sentar(int fila, char letra, Espectador e)
-            {
-                getAsiento(fila, letra).setEspectador(e);
-            }
-
-            public Asiento getAsiento(int fila, char letra)
-            {
-                return asientos[asientos.GetLength(0) - fila - 1 , letra - 'A'];
-            }
-            public int getFilas()
-            {
-                return asientos.GetLength(1);
-            }
-            public int getColumnas()
-            {
-                return asientos.GetLength(0);
-            }
-
-            public void mostrar()
-            {
-                Console.WriteLine("Información cine");
-                Console.WriteLine("Pelicula reproducida: " + pelicula);
-                Console.WriteLine("Precio entrada: " + precio);
-                Console.WriteLine("");
-
-                int contador = 0;
-
-                for (int i = 0; i < asientos.Length; i++)
-                {
-                    for (int j = 0; j < asientos.GetLength(0); j++)
-                    {
-                        Console.WriteLine(asientos[i,0+contador]);
-                    }
-                    Console.WriteLine("");
-                    contador++;
                 }
             }
-        }
-
-        public class Metodos
-        {
-            public static string[] nombres = {"Fernando", "Nacho", "Zeus", "ELfrasco"};
-            
-            public static Random random = new Random();
-            public static int generaNumeroEnteroAleatorio(int minimo, int maximo)
-            {
-                int num = random.Next(minimo , maximo);
-                return num;
-            }
-
         }
 
         static void Main(string[] args)
         {
+            int cont = 0;
+            List<Espectador> espectados = new List<Espectador>();
+            Espectador per1 = new Espectador("Ivan", 38, 2);
+            Espectador per2 = new Espectador("Luigi", 24, 9999);
+            Espectador per3 = new Espectador("Mariela", 10, 50);
+            Espectador per4 = new Espectador("Carlos", 29, 400);
+            espectados.Add(per1);
+            espectados.Add(per2);
+            espectados.Add(per3);
+            espectados.Add(per4);
 
-            Pelicula pelicula = new Pelicula("Avengers: Endgame", 200, 13, "Kevin Feige");
+            Sala sala = new Sala(9, 5);
+            Pelicula peli = new Pelicula(20);
+            Cine cine = new Cine(200, peli);
 
-            Console.WriteLine("Introduce el numero de filas");
-            
-            int filas = Int32.Parse(Console.ReadLine());
-
-            Console.WriteLine("Introduce el numero de columnas");
-            int columnas = Int32.Parse(Console.ReadLine());
-
-            Console.WriteLine("Introduce el precio de la entrada de cine");
-            double precio = Int32.Parse(Console.ReadLine());
-
-            Cine cine = new Cine(filas, columnas, precio, pelicula);
-
-            Console.WriteLine("Introduce el numero de espectadores a crear");
-            int numEspectadores = Int32.Parse(Console.ReadLine());
-
-            Espectador e;
-            int fila;
-            char letra;
-
-            Console.WriteLine("Espectadores generados: ");
-            for (int i = 0; i < numEspectadores && cine.haySitio(); i++) {
-
-                e = new Espectador(
-                        Metodos.nombres[Metodos.generaNumeroEnteroAleatorio(0, Metodos.nombres.Length - 1)],
-                        Metodos.generaNumeroEnteroAleatorio(10, 30),
-                        Metodos.generaNumeroEnteroAleatorio(1, 10));
-
-                Console.WriteLine(e.getNombre());
-                do
+            foreach (Espectador espectador in espectados)
+            {
+                if (espectador.Edad > cine.Peli.Edad)
                 {
-                    fila = Metodos.generaNumeroEnteroAleatorio(0, cine.getFilas() - 1);
-                    letra = (char)Metodos.generaNumeroEnteroAleatorio('A', 'A' + (cine.getColumnas() - 1));
-                } while (cine.haySitioButaca(fila, letra));
-
-                if (cine.sePuedeSentar(e))
+                    if (espectador.Dinero >= cine.Precio)
+                    {
+                        sala.ocuparRandom(espectador);
+                        Console.WriteLine($"El asiento {sala.AsientoOcupados[cont]}");
+                        Console.WriteLine("");
+                        cont++;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{espectador.Nombre} no tiene el dinero suficiente");
+                        Console.WriteLine("");
+                    }
+                }
+                else
                 {
-                    e.pagar(cine.getPrecio());
-                    cine.sentar(fila, letra, e);
+                    Console.WriteLine($"{espectador.Nombre} no tiene la edad suficiente para ver la pelicula");
+                    Console.WriteLine("");
                 }
             }
-
-            Console.WriteLine("");
-            cine.mostrar();
-            Console.ReadLine();
-
+            sala.simulacion();
+            Console.ReadKey();
         }
     }
 }
