@@ -85,7 +85,7 @@ namespace Ejercicio_13
                 {
                     double nuevoSalario = base.getSalario() + base.PLUS;
                     base.setSalario(nuevoSalario);
-                    Console.WriteLine("Se le añadido el plus, al empleado " + base.getNombre());
+                    Console.WriteLine("Se le añadido el plus a " + base.getNombre());
                     return true;
                 }
                 return false;
@@ -118,7 +118,7 @@ namespace Ejercicio_13
                 {
                     double nuevoSalario = base.getSalario() + base.PLUS;
                     base.setSalario(nuevoSalario);
-                    Console.WriteLine("Se le añadido el plus, al empleado " + base.getNombre());
+                    Console.WriteLine("Se le añadido el plus a " + base.getNombre());
                     return true;
                 }
                 return false;
@@ -127,8 +127,8 @@ namespace Ejercicio_13
 
         static void Main(string[] args)
         {
-            Comercial c1 = new Comercial(300, "DDR", 37, 1000);
-            Repartidor r1 = new Repartidor("zona 3", "Fer", 22, 900);
+            Comercial c1 = new Comercial(300, "Duki", 37, 1000);
+            Repartidor r1 = new Repartidor("zona 3", "YSY A", 22, 900);
 
             Console.WriteLine("El empleado comercial tiene un salario de: " + c1.getSalario());
             c1.plus();

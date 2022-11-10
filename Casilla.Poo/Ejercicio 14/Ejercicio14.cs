@@ -122,7 +122,7 @@ namespace Ejercicio_14
 
             for (int i = 0; i < productos.Length; i++)
             {
-                total = total + productos[i].calcular(5);
+                total += productos[i].calcular(5);
                 numprod++;
             }
 

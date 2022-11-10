@@ -11,10 +11,10 @@ namespace Ejercicio_9
     {
         class Pelicula
         {
-            string titulo = "";
-            int duracion = 0;
-            int edad = 0;
-            string director = "";
+            private string titulo = "";
+            private int duracion = 0;
+            private int edad = 0;
+            private string director = "";
 
             public string Titulo { get { return titulo; } set { titulo = value; } }
             public int Duracion { get { return duracion; } set { duracion = value; } }
@@ -65,11 +65,14 @@ namespace Ejercicio_9
             int fila = 0;
             char[] letra = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K' };
             int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
             public List<string> Asiento = new List<string>();
             public List<string> AsientoOcupados = new List<string>();
+
             static Random rnd = new Random();
             public int Columna { get { return columna; } set { columna = value; } }
             public int Fila { get { return fila; } set { fila = value; } }
+
             public Sala(int columna, int fila)
             {
                 Columna = columna;
