@@ -148,9 +148,9 @@ namespace Ejercicio_15
                 {
                     for (int j = 0; j < estanteria.GetLength(0) && !encontrado; j++)
                     {
-                        if (estanteria[i, j] == null)
+                        if (estanteria[i,j] == null)
                         {
-                            estanteria[i, j] = b;
+                            estanteria[i,j] = b;
                             encontrado = true;
                         }
                     }
@@ -168,7 +168,6 @@ namespace Ejercicio_15
 
             public void eliminarBebida(int id)
             {
-
                 bool encontrado = false;
                 for (int i = 0; i < estanteria.Length && !encontrado; i++)
                 {
@@ -194,52 +193,49 @@ namespace Ejercicio_15
                     Console.WriteLine("No existe la bebida");
                 }
             }
-
             public void mostrarBebidas()
             {
-                for (int i = 0; i < estanteria.Length; i++)
+                for (int i = 0; i < estanteria.GetLength(0); i++)
                 {
-                    for (int j = 0; j < estanteria.GetLength(0); j++)
+                    for (int j = 0; j < estanteria.GetLength(1); j++)
                     {
-                        if (estanteria[i, j] != null)
+                        if (estanteria[i,j] != null)
                         {
-                            Console.WriteLine("fila " + i + ", columna: " + j + " Bebida: " + estanteria[i, j].getMarca());
+                            Console.WriteLine("Fila: " + i + ", Columna: " + j + " Bebida: " + estanteria[i, j].getMarca());
                         }
                     }
                 }
             }
+            
 
             public double calcularPrecioBebidas()
             {
                 double precioTotal = 0;
-                for (int i = 0; i < estanteria.Length; i++)
+                for (int i = 0; i < estanteria.GetLength(0); i++)
                 {
-                    for (int j = 0; j < estanteria.GetLength(0); j++)
+                    for (int j = 0; j < estanteria.GetLength(1); j++)
                     {
-                        if (estanteria[i, j] != null)
+                        if (estanteria[i,j] != null)
                         {
                             precioTotal += estanteria[i, j].getPrecio();
                         }
                     }
                 }
-
                 return precioTotal;
-
             }
 
             public double calcularPrecioBebidas(string marca)
             {
                 double precioTotal = 0;
-                for (int i = 0; i < estanteria.Length; i++)
+                for (int i = 0; i < estanteria.GetLength(0); i++)
                 {
-                    for (int j = 0; j < estanteria.GetLength(0); j++)
+                    for (int j = 0; j < estanteria.GetLength(1); j++)
                     {
-                        if (estanteria[i, j] != null)
+                        if (estanteria[i,j] != null)
                         {
-
-                            if (estanteria[i, j].getMarca().Equals(marca))
+                            if (estanteria[i,j].getMarca().Equals(marca))
                             {
-                                precioTotal += estanteria[i, j].getPrecio();
+                                precioTotal += estanteria[i,j].getPrecio();
                             }
                         }
                     }
@@ -252,7 +248,7 @@ namespace Ejercicio_15
                 double precioTotal = 0;
                 if (columna >= 0 && columna < estanteria.GetLength(0))
                 {
-                    for (int i = 0; i < estanteria.Length; i++)
+                    for (int i = 0; i < estanteria.GetLength(0); i++)
                     {
                         if (estanteria[i, columna] != null)
                         {
@@ -264,7 +260,6 @@ namespace Ejercicio_15
                 {
                     Console.WriteLine("La columna debe estar entre 0 y " + estanteria.GetLength(0));
                 }
-
                 return precioTotal;
             }
         }
@@ -279,23 +274,21 @@ namespace Ejercicio_15
                 switch (i % 2)
                 {
                     case 0:
-                        b = new AguaMineral("manantial1", 1.5, 5, "bezoya");
+                        b = new AguaMineral("Manantial", 2, 150, "Villavicencio");
                         a.agregarBebida(b);
                         break;
                     case 1:
-                        b = new BebidaAzucarada(0.2, true, 1.5, 10, "Coca Cola");
+                        b = new BebidaAzucarada(0.3, true, 0.6, 290, "Speed");
                         a.agregarBebida(b);
                         break;
                 }
             }
 
+            Console.WriteLine("");
             a.mostrarBebidas();
-            Console.WriteLine("Precio de todas las bebidas " + a.calcularPrecioBebidas());
-            a.eliminarBebida(4);
-            a.mostrarBebidas();
-            Console.WriteLine("Precio de todas las bebidas" + a.calcularPrecioBebidas());
-            Console.WriteLine("Precio de todas las bebidas de la marca bezoya" + a.calcularPrecioBebidas("bezoya"));
-            Console.WriteLine("Calcular el precio de la columna 0: " + a.calcularPrecioBebidas(0));
+            Console.WriteLine("");
+            Console.WriteLine("Precio de todas las bebidas: $" + a.calcularPrecioBebidas());
+            Console.WriteLine("Precio de todas las bebidas de la marca Speed: $" + a.calcularPrecioBebidas("Speed"));
             Console.ReadLine();
 
         }

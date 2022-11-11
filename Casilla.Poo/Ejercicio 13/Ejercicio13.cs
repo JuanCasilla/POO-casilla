@@ -102,15 +102,16 @@ namespace Ejercicio_13
                 this.zona = zona;
             }
 
-            public String getZona()
+            public string getZona()
             {
                 return zona;
             }
 
-            public void setZona(String zona)
+            public void setZona(string zona)
             {
                 this.zona = zona;
             }
+
 
             public override bool plus()
             {
