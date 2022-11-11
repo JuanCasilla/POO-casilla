@@ -289,6 +289,12 @@ namespace Ejercicio_15
             Console.WriteLine("");
             Console.WriteLine("Precio de todas las bebidas: $" + a.calcularPrecioBebidas());
             Console.WriteLine("Precio de todas las bebidas de la marca Speed: $" + a.calcularPrecioBebidas("Speed"));
+            Console.WriteLine("Precio de todas las bebidas de la marca Villavicencio: $" + a.calcularPrecioBebidas("Villavicencio"));
+            Console.WriteLine("");
+            a.eliminarBebida(2);
+            a.eliminarBebida(4);
+            a.eliminarBebida(7);
+            Console.WriteLine("Nuevo precio de todas las bebidas: $" + a.calcularPrecioBebidas());
             Console.ReadLine();
 
         }
