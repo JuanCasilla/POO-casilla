@@ -8,7 +8,6 @@ namespace Ejercicio_15
 {
     internal class Ejercicio15
     {
-
         public class Bebida
         {
             private static int idActual = 1;
