@@ -43,7 +43,6 @@ namespace Ejercicio_9
                 Nombre = nombre;
             }
         }
-
         class Cine
         {
             int precio = 0;
@@ -58,7 +57,6 @@ namespace Ejercicio_9
                 Peli = peli;
             }
         }
-
         class Sala
         {
             int columna = 0;
@@ -106,7 +104,8 @@ namespace Ejercicio_9
                 if (Asiento[probabilidad] != "ocupado")
                 {
                     AsientoOcupados.Add($"{Asiento[probabilidad]} ocupado por: {espectador.Nombre}");
-                    Asiento.Insert(probabilidad, $"ocupado");
+                    AsientoOcupados.Add($"{Asiento[probabilidad]} ocupado por: {espectador.Nombre}");
+                    Asiento.Insert(probabilidad, "ocupado");
                     Asiento.RemoveAt(probabilidad + 1);
                 }
                 else
@@ -117,7 +116,7 @@ namespace Ejercicio_9
                         if (Asiento[cont] != "ocupado")
                         {
                             AsientoOcupados.Add($"{Asiento[cont]} ocupado por: {espectador.Nombre}");
-                            Asiento.Insert(cont, $"ocupado");
+                            Asiento.Insert(cont, "ocupado");
                             Asiento.RemoveAt(cont + 1);
                             break;
                         }
@@ -134,7 +133,7 @@ namespace Ejercicio_9
             Espectador per1 = new Espectador("Ivan", 38, 2);
             Espectador per2 = new Espectador("Luigi", 24, 9999);
             Espectador per3 = new Espectador("Mariela", 10, 50);
-            Espectador per4 = new Espectador("Carlos", 29, 400);
+            Espectador per4 = new Espectador("Carlos", 69, 5);
             espectados.Add(per1);
             espectados.Add(per2);
             espectados.Add(per3);
