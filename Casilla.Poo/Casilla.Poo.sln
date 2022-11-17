@@ -3,23 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 1", "Casilla.Poo\Ejercicio 1.csproj", "{CD8415AC-2E62-446B-8AE2-7642282E44FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 01", "Casilla.Poo\Ejercicio 01.csproj", "{CD8415AC-2E62-446B-8AE2-7642282E44FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 2", "Ejercicio 2\Ejercicio 2\Ejercicio 2.csproj", "{C7269E45-C3A4-4C9E-92D0-E123D7381369}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 02", "Ejercicio 2\Ejercicio 2\Ejercicio 02.csproj", "{C7269E45-C3A4-4C9E-92D0-E123D7381369}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 3", "Ejercicio 3\Ejercicio 3.csproj", "{961CF180-35D2-41C7-8CFA-8F41A3294C19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 03", "Ejercicio 3\Ejercicio 03.csproj", "{961CF180-35D2-41C7-8CFA-8F41A3294C19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 4", "Ejercicio 4\Ejercicio 4.csproj", "{8B467661-CC51-49F1-9BC8-3E28E06D88E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 04", "Ejercicio 4\Ejercicio 04.csproj", "{8B467661-CC51-49F1-9BC8-3E28E06D88E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 5", "Ejercicio 5\Ejercicio 5.csproj", "{3A6867C3-6302-4F3B-999D-C26784532881}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 05", "Ejercicio 5\Ejercicio 05.csproj", "{3A6867C3-6302-4F3B-999D-C26784532881}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 6", "Ejercicio 6\Ejercicio 6.csproj", "{54BDE955-1539-4343-8849-7D96DD974F5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 06", "Ejercicio 6\Ejercicio 06.csproj", "{54BDE955-1539-4343-8849-7D96DD974F5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 7", "Ejercicio 7\Ejercicio 7.csproj", "{3CE3CE67-CDAD-4706-9A5D-7138A3935E4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 07", "Ejercicio 7\Ejercicio 07.csproj", "{3CE3CE67-CDAD-4706-9A5D-7138A3935E4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 8", "Ejercicio 8\Ejercicio 8.csproj", "{84CC4FC7-38C2-484A-89CC-151F4AEBB049}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 08", "Ejercicio 8\Ejercicio 08.csproj", "{84CC4FC7-38C2-484A-89CC-151F4AEBB049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 9", "Ejercicio 9\Ejercicio 9.csproj", "{8696EEDC-B79F-4E13-9829-72AE88922295}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 09", "Ejercicio 9\Ejercicio 09.csproj", "{8696EEDC-B79F-4E13-9829-72AE88922295}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio 10", "Ejercicio 10\Ejercicio 10.csproj", "{B6FB3BB0-66CF-4A74-8714-34637138524F}"
 EndProject
